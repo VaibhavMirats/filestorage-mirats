@@ -29,7 +29,12 @@ public class FilestorageController {
 	
 	@Autowired
 	FileUploadServiceImpl fileservice;
-	
+
+	@RequestMapping("/welcome")
+	public String welcome() {
+
+		return "hello this is my File Storage api in docker";
+	}
 	@PostMapping("/FilestorageFile")
 	public UploadFileResponse FilestorageFile(@RequestParam("file") MultipartFile file,
 			@RequestParam("userid") String userid,@RequestParam("admin_status") String admin_status) {
